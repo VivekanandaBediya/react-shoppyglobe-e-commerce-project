@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Checkout(){
 
- const items = useSelector(
-  state=>state.cart.items
- );
+ const items = useSelector(state=>state.cart.items);
 
  const dispatch = useDispatch();
  const navigate = useNavigate();
@@ -21,9 +19,7 @@ function Checkout(){
  };
 
  return(
-
   <div>
-
    <h2>Checkout</h2>
 
    <input placeholder="Name"/>
@@ -31,16 +27,11 @@ function Checkout(){
 
    <h3>Order Summary</h3>
 
-   {items.map(item=>(
-    <p key={item.id}>
-     {item.title} x {item.quantity}
-    </p>
-   ))}
+   {
+    items.map(item=>(<p key={item.id}>{item.title} x {item.quantity}</p>))
+   }
 
-   <button onClick={handleOrder}>
-    Place Order
-   </button>
-
+   <button onClick={handleOrder}>Place Order</button>
   </div>
 
  )
