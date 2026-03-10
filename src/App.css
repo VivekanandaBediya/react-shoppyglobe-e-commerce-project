@@ -6,9 +6,10 @@ margin:0;
 .header{
 display:flex;
 justify-content:space-between;
-padding:15px;
+padding:10px;
 background:#222;
 color:white;
+align-items: center;
 }
 
 .header a{

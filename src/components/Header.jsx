@@ -20,8 +20,8 @@ function Header(){
    />
 
    <nav>
-    <Link to="/">Home</Link>
-    <Link to="/cart">Cart</Link>
+    <Link to="/" className="nav-list">Home</Link>
+    <Link to="/cart" className="nav-list">Cart</Link>
    </nav>
 
   </header>
