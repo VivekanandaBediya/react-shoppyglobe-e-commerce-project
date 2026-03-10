@@ -4,33 +4,17 @@ import { Link } from "react-router-dom";
 
 function Cart(){
 
- const items = useSelector(
-  state=>state.cart.items
- );
+ const items = useSelector(state=>state.cart.items);
 
  return(
-
   <div>
-
    <h2>Your Cart</h2>
 
-   {items.map(item=>(
+   {items.map(item=>(<CartItem key={item.id} item={item}/>))}
 
-    <CartItem
-     key={item.id}
-     item={item}
-    />
-
-   ))}
-
-   <Link to="/checkout">
-    Checkout
-   </Link>
-
+   <Link to="/checkout">Checkout</Link>
   </div>
-
  )
-
 }
 
 export default Cart;
