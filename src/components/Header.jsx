@@ -12,12 +12,7 @@ function Header(){
 
    <h2>ShoppyGlobe</h2>
 
-   <input
-    placeholder="Search products"
-    onChange={(e)=>
-      dispatch(setSearchTerm(e.target.value))
-    }
-   />
+   <input placeholder="Search products" onChange={(e)=>dispatch(setSearchTerm(e.target.value))}/>
 
    <nav>
     <Link to="/" className="nav-list">Home</Link>
