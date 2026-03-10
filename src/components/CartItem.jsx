@@ -1,18 +1,45 @@
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../redux/cartSlice";
 
-function CartItem({ item }) {
-  const dispatch = useDispatch();
+import {
+ removeFromCart,
+ increaseQty,
+ decreaseQty
+} from "../redux/cartSlice";
 
-  return (
-    <div className="cart-item">
-      <h3>{item.title}</h3>
+function CartItem({item}){
 
-      <p>Qty : {item.quantity}</p>
+ const dispatch = useDispatch();
 
-      <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
-    </div>
-  );
+ return(
+
+  <div>
+
+   <h3>{item.title}</h3>
+
+   <p>Quantity: {item.quantity}</p>
+
+   <button
+    onClick={()=>dispatch(increaseQty(item.id))}
+   >
+    +
+   </button>
+
+   <button
+    onClick={()=>dispatch(decreaseQty(item.id))}
+   >
+    -
+   </button>
+
+   <button
+    onClick={()=>dispatch(removeFromCart(item.id))}
+   >
+    Remove
+   </button>
+
+  </div>
+
+ )
+
 }
 
 export default CartItem;

@@ -1,24 +1,50 @@
+import { useDispatch,useSelector } from "react-redux";
+import { clearCart } from "../redux/cartSlice";
 import { useNavigate } from "react-router-dom";
 
-function Checkout() {
-  const navigate = useNavigate();
+function Checkout(){
 
-  const placeOrder = () => {
-    alert("Order placed");
+ const items = useSelector(
+  state=>state.cart.items
+ );
 
-    navigate("/");
-  };
+ const dispatch = useDispatch();
+ const navigate = useNavigate();
 
-  return (
-    <div>
-      <h2>Checkout</h2>
+ const handleOrder = ()=>{
 
-      <input placeholder="Name" />
-      <input placeholder="Address" />
+  alert("Order placed");
 
-      <button onClick={placeOrder}>Place Order</button>
-    </div>
-  );
+  dispatch(clearCart());
+
+  navigate("/");
+ };
+
+ return(
+
+  <div>
+
+   <h2>Checkout</h2>
+
+   <input placeholder="Name"/>
+   <input placeholder="Address"/>
+
+   <h3>Order Summary</h3>
+
+   {items.map(item=>(
+    <p key={item.id}>
+     {item.title} x {item.quantity}
+    </p>
+   ))}
+
+   <button onClick={handleOrder}>
+    Place Order
+   </button>
+
+  </div>
+
+ )
+
 }
 
 export default Checkout;

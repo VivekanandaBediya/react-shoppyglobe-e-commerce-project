@@ -1,18 +1,36 @@
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
+import { Link } from "react-router-dom";
 
-function Cart() {
-  const items = useSelector((state) => state.cart.items);
+function Cart(){
 
-  return (
-    <div>
-      <h2>Your Cart</h2>
+ const items = useSelector(
+  state=>state.cart.items
+ );
 
-      {items.map((item) => (
-        <CartItem key={item.id} item={item} />
-      ))}
-    </div>
-  );
+ return(
+
+  <div>
+
+   <h2>Your Cart</h2>
+
+   {items.map(item=>(
+
+    <CartItem
+     key={item.id}
+     item={item}
+    />
+
+   ))}
+
+   <Link to="/checkout">
+    Checkout
+   </Link>
+
+  </div>
+
+ )
+
 }
 
 export default Cart;

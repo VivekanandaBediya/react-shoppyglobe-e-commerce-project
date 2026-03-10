@@ -1,36 +1,25 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import ProductList from "./pages/ProductList";
-import ProductDetail from "./pages/ProductDetail";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import NotFound from "./pages/NotFound";
+import { Suspense } from "react";
 
-function Layout() {
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  );
-}
+function App(){
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path : "", element: <ProductList /> },
-      { path: "product/:id", element: <ProductDetail /> },
-      { path: "cart", element: <Cart /> },
-      { path: "checkout", element: <Checkout /> },
-      { path: "*", element: <NotFound /> },
-    ],
-  },
-]);
+ return(
 
-function App() {
-  return <RouterProvider router={router} />;
+  <div>
+
+   <Header/>
+
+   <Suspense fallback={<h2>Loading...</h2>}>
+
+     <Outlet/>
+
+   </Suspense>
+
+  </div>
+
+ )
+
 }
 
 export default App;
