@@ -8,12 +8,9 @@ function ProductDetail(){
  const [product,setProduct] = useState(null);
 
  useEffect(()=>{
+    const fetchProduct = async()=>{
 
-  const fetchProduct = async()=>{
-
-   const res = await fetch(
-    `https://dummyjson.com/products/${id}`
-   );
+   const res = await fetch(`https://dummyjson.com/products/${id}`);
 
    const data = await res.json();
 
