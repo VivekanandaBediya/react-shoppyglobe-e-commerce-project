@@ -15,3 +15,5 @@
 
 ## 4. Please follow above instruction for successfully running the shoppyglobe e-commerce website
 
+# completed the project successfully
+
