@@ -10,10 +10,7 @@ const useProducts = ()=>{
     const fetchProducts = async ()=>{
 
       try{
-
-        const res = await fetch(
-          "https://dummyjson.com/products"
-        );
+        const res = await fetch("https://dummyjson.com/products");
 
         const data = await res.json();
 
