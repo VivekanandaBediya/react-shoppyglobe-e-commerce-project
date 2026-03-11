@@ -17,3 +17,6 @@
 
 # completed the project successfully
 
+
+## Note : In my system shoppyglobe project working fine, I think may be some network issue in your system.
+
