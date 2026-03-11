@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
+import "../App.css"
 
 function ProductDetail(){
 
@@ -26,7 +27,7 @@ function ProductDetail(){
 
  return(
 
-  <div>
+  <div className="ProductItem-details">
 
    <h2>{product.title}</h2>
 
@@ -35,6 +36,15 @@ function ProductDetail(){
    <p>{product.description}</p>
 
    <h3>${product.price}</h3>
+
+   <p>Category : {product.category}</p>
+   <p>Discount % : {product.discountPercentage}</p>
+   <p>Rating : {product.rating}</p>
+   <p>Stock : {product.stock}</p>
+   <p>Brand : {product.brand}</p>
+   <p>Warranty : {product.warrantyInformation}</p>
+   <p>Shipping : {product.shippingInformation}</p>
+   <p>ReturnPolicy : {product.returnPolicy}</p>
 
   </div>
 

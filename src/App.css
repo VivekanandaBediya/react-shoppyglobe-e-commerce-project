@@ -40,3 +40,10 @@ object-fit:cover;
 .product-details{
   margin-left: 15px;
 }
+
+.ProductItem-details{
+  margin: 50px;
+  border: 2px solid black;
+  padding: 20px;
+
+}
